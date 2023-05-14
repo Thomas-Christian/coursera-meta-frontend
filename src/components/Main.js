@@ -1,6 +1,7 @@
 import BookingPage from "./BookingPage";
 import { useReducer } from "react";
 import { fetchAPI } from "../api";
+import HomePage from "./HomePage";
 
 export default function Main() {
 
@@ -42,9 +43,20 @@ export default function Main() {
         
     }
 
-    return (
-        <main>
-            <BookingPage availableTimes={availableTimes} dispatch={dispatch} />
-        </main>
-    )
+    if (window.location.pathname === "/booking") {
+        return (
+            <main>
+                <BookingPage availableTimes={availableTimes} dispatch={dispatch} />
+            </main>
+        )
+    }
+
+    else {
+        return (
+            <main>
+                <HomePage /> 
+            </main>
+        )
+    }
+
 }
