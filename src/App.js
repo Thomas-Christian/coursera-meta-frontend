@@ -7,18 +7,17 @@ import HomePage from './components/HomePage';
 import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
 import Main from './components/Main';
 import { ChakraProvider } from '@chakra-ui/react';
+import theme from './theme';
 
 function App() {
   return (
     <>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
     <BrowserRouter>
-
-      <Nav />
-
+    <Nav />
         <Routes>
           <Route path="/" element={<HomePage />}> </Route>
-          <Route path="/booking" element={<BookingPage />}> </Route>
+          <Route path="/booking" element={<Main />}> </Route>
           <Route path="/confirmed" element={<Confirmed />}> </Route>
         </Routes>
       </BrowserRouter>

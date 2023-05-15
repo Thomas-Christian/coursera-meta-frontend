@@ -40,23 +40,16 @@ export default function Main() {
 
 
         return state
-        
     }
 
-    if (window.location.pathname === "/booking") {
+
         return (
             <main>
                 <BookingPage availableTimes={availableTimes} dispatch={dispatch} />
             </main>
         )
-    }
 
-    else {
-        return (
-            <main>
-                <HomePage /> 
-            </main>
-        )
-    }
+
+
 
 }
